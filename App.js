@@ -11,7 +11,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.topbar}>
-        <TouchableOpacity style={styles.causes}>CAUSESS</TouchableOpacity>
+        <TouchableOpacity style={styles.causes}>CAUSES</TouchableOpacity>
         <TouchableOpacity style={styles.about}>About</TouchableOpacity>
         <TouchableOpacity style={styles.signin_text}>Sign in</TouchableOpacity>
         <View style={styles.signup_button}>
