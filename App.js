@@ -3,7 +3,6 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Button, ImagePropTypes } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Spartan_400Regular, Spartan_600SemiBold, Spartan_700Bold } from '@expo-google-fonts/spartan';
-// import {AbhayaLibre_700Bold} from '@expo-google-fonts/abhaya-libre';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -17,6 +16,7 @@ export default function App() {
       <View style={styles.topbar}>
         <TouchableOpacity style={styles.causes}>CAUSES</TouchableOpacity>
         <TouchableOpacity style={styles.about}>ABOUT</TouchableOpacity>
+        {/* social media icons */}
         <TouchableOpacity style={styles.facebook}><Image style={styles.facebook_img} source ={require('./assets/facebook.png')}></Image></TouchableOpacity>
         <TouchableOpacity style={styles.instagram}><Image style={styles.instagram_img} source ={require('./assets/insta.png')}></Image></TouchableOpacity>
         <TouchableOpacity style={styles.twitter}><Image style={styles.twitter_img} source ={require('./assets/twitter.png')}></Image></TouchableOpacity>
@@ -49,7 +49,6 @@ export default function App() {
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
