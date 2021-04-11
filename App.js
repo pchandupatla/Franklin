@@ -11,18 +11,23 @@ export default function App() {
     Spartan_600SemiBold,
     Spartan_700Bold,
   });
+
   return (
     <View style={styles.container}>
       <View style={styles.topbar}>
         <TouchableOpacity style={styles.causes}>CAUSES</TouchableOpacity>
-        <TouchableOpacity style={styles.about}>About</TouchableOpacity>
+        <TouchableOpacity style={styles.about}>ABOUT</TouchableOpacity>
+        <TouchableOpacity style={styles.facebook}><Image style={styles.facebook_img} source ={require('./assets/facebook.png')}></Image></TouchableOpacity>
+        <TouchableOpacity style={styles.instagram}><Image style={styles.instagram_img} source ={require('./assets/insta.png')}></Image></TouchableOpacity>
+        <TouchableOpacity style={styles.twitter}><Image style={styles.twitter_img} source ={require('./assets/twitter.png')}></Image></TouchableOpacity>
+
         <TouchableOpacity style={styles.signin_text}>Sign in</TouchableOpacity>
         <View style={styles.signup_button}>
           <TouchableOpacity style = {styles.signup_text}>Sign up</TouchableOpacity>
         </View>
       </View>
       <Image style={styles.secfi_image} source={require('./assets/secfi.png')}></Image>
-      <Text style={styles.franklin_txt}>FRANKLIN</Text>
+      <Text style={styles.franklin_txt}>FRANKLIN </Text>
       <View style={styles.middle_container}>
         <Text style={styles.middle_txt}>
           YOUR LOAN, THEIR WORLD.
@@ -58,14 +63,13 @@ const styles = StyleSheet.create({
     position:"absolute",
     top: "0px",
     left: "0px",
-
     fontFamily: "Spartan_600SemiBold",
     fontStyle: "normal",
     fontWeight: "600",
     fontSize: "18px",
     lineHeight: "36px",
     letterSpacing: "0.01em",
-    color:"#2D407D"
+    color:"#2D407D",
   },
 
   causes: {
@@ -80,7 +84,7 @@ const styles = StyleSheet.create({
     position:"absolute",
     width:"128px",
     height:"27px",
-    left:"945px",
+    left:"960px",
     top: "57px"
   },
 
@@ -91,12 +95,12 @@ const styles = StyleSheet.create({
     left:"1247px",
     top: "48px",
     textAlign: "center",
-
     backgroundColor: "#5EB1FF",
     borderRadius: "7px"
   },
 
   signup_text: {
+    fontFamily: "Spartan_700Bold",
     position: "relative",
     top: "8px",
   },
@@ -107,7 +111,7 @@ const styles = StyleSheet.create({
     height:"54px",
     left:"1105px",
     top: "57px",
-
+    fontFamily: "Spartan_700Bold",
     display: "flex",
     lineHeight: "36px",
     alignItems: "center",
@@ -238,6 +242,39 @@ const styles = StyleSheet.create({
 
   how_it_works: {
 
+  },
+
+  facebook: {
+    position: 'absolute',
+    left: '814px',
+    top: '63px',
+  },
+
+  facebook_img: {
+    height: '20px',
+    width: '20px',
+  },
+
+  instagram: {
+    position: 'absolute',
+    left: '852px',
+    top: '63px',
+  },
+
+  instagram_img: {
+    height: '20px',
+    width: '20px'
+  },
+
+  twitter: {
+    position: 'absolute',
+    left: '890px',
+    top: '63px',
+  },
+
+  twitter_img: {
+    height: '20px',
+    width: '24px'
   }
 
 });
