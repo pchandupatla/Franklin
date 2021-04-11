@@ -1,12 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar, setStatusBarStyle } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { useFonts, Spartan_400Regular, Spartan_600SemiBold} from '@expo-google-fonts/spartan';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Button, ImagePropTypes } from 'react-native';
+import { useFonts } from 'expo-font';
+import { Spartan_400Regular, Spartan_600SemiBold, Spartan_700Bold } from '@expo-google-fonts/spartan';
+// import {AbhayaLibre_700Bold} from '@expo-google-fonts/abhaya-libre';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
     Spartan_400Regular,
     Spartan_600SemiBold,
+    Spartan_700Bold,
   });
   return (
     <View style={styles.container}>
@@ -18,11 +21,30 @@ export default function App() {
           <TouchableOpacity style = {styles.signup_text}>Sign up</TouchableOpacity>
         </View>
       </View>
-
+      <Image style={styles.secfi_image} source={require('./assets/secfi.png')}></Image>
+      <Text style={styles.franklin_txt}>FRANKLIN</Text>
+      <View style={styles.middle_container}>
+        <Text style={styles.middle_txt}>
+          YOUR LOAN, THEIR WORLD.
+        </Text>
+        <Text style={styles.bottom_txt}>
+          Franklin can help connect small businesses to those who are willing to lend a helping hand by operating as a guarantor for crowdfunding
+        </Text>
+      </View>
+      <TouchableOpacity style={styles.green_button_one}>
+          Become a lender
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.green_button_two}>
+        Become a borrower
+      </TouchableOpacity>
+      {/* <View style={styles.how_it_works}>
+        <Text>HOW FRANKLIN WORKS</Text>
+      </View> */}
       <StatusBar style="auto" />
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -90,5 +112,132 @@ const styles = StyleSheet.create({
     lineHeight: "36px",
     alignItems: "center",
     textAlign: "center"
+  },
+
+  secfi_image: {
+    position: 'absolute',
+    width: '1289px',
+    height: '877px',
+    left: '-656px',
+    top: '167px'
+  },
+
+  franklin_txt: {
+    position: 'absolute',
+    width: '125px',
+    height: '36px',
+    left: '670px',
+    top: '282px',
+
+    fontFamily: 'Spartan_600SemiBold',
+    fontStyle: 'normal',
+    fontWeight: '600',
+    fontSize: '18px',
+    lineHeight: '36px',
+    /* identical to box height, or 200% */
+
+    letterSpacing: '0.15em',
+
+    color: '#3B4F91',
+  },
+
+  middle_container:
+  {
+    position: 'absolute',
+    width: '624px',
+    height: '321px',
+    left: '670px',
+    top: '363px',
+  },
+
+  middle_txt: {
+    fontFamily: 'Spartan_700Bold',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '70px',
+    lineHeight: '70px',
+    /* or 52% */
+
+    letterSpacing: '-0.015em',
+
+    color: '#2D407D',
+  },
+
+  bottom_txt: {
+    position: 'absolute',
+    left: '0px',
+    top: '220px',
+    fontFamily: 'Spartan_400Regular',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '18px',
+    lineHeight: '36px',
+    letterSpacing: '0.02em',
+    color: '#3B4F91',
+  },
+
+  green_button: {
+    backgroundColor: '#B1E397',
+    borderRadius: '7px',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: 'Spartan_400Regular',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '18px',
+    lineHeight: '36px',
+    /* or 200% */
+    letterSpacing: '0.01em',
+
+    color: '#FFFFFF',
+  },
+
+  green_button_one: {
+    position: 'absolute',
+    width: '233px',
+    height: '76px',
+    left: '669px',
+    top: '729px',
+
+    backgroundColor: '#B1E397',
+    borderRadius: '7px',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: 'Spartan_400Regular',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '18px',
+    lineHeight: '36px',
+    /* or 200% */
+    letterSpacing: '0.01em',
+
+    color: '#FFFFFF',
+  },
+
+  green_button_two: {
+    position: 'absolute',
+    width: '233px',
+    height: '76px',
+    left: '956px',
+    top: '729px',
+
+    backgroundColor: '#B1E397',
+    borderRadius: '7px',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: 'Spartan_400Regular',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '18px',
+    lineHeight: '36px',
+    /* or 200% */
+    letterSpacing: '0.01em',
+
+    color: '#FFFFFF',
+  },
+
+  how_it_works: {
+
   }
+
 });
