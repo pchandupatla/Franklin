@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo-google-fonts/amiri": "^0.1.0",
     "@expo-google-fonts/inter": "^0.1.0",
     "@expo-google-fonts/spartan": "^0.1.0",
     "expo": "~40.0.0",

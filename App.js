@@ -3,12 +3,15 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Button, ImagePropTypes } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Spartan_400Regular, Spartan_600SemiBold, Spartan_700Bold } from '@expo-google-fonts/spartan';
+import { Amiri_400Regular } from '@expo-google-fonts/amiri'
 
 export default function App() {
   let [fontsLoaded] = useFonts({
     Spartan_400Regular,
     Spartan_600SemiBold,
     Spartan_700Bold,
+    Amiri_400Regular,
+
   });
 
   return (
@@ -49,8 +52,46 @@ export default function App() {
         <Ellipse left='774px'/>
       </View>
       <StatusBar style="auto" />
+      <View style={styles.dollars_invested}>
+        <Text style={styles.total_dollars}>TOTAL DOLLARS INVESTED IN OUR BUSINESSES</Text>
+        <Text style={styles.amiri}>$432,101</Text>
+        <Text style={styles.spartan_bel_am}>We are committed to making large impacts on small businesses. We work with small business owners to achieve lasting success.</Text>
+      </View>
+
+      <View style={styles.causes_section}>
+        <Text style = {{
+          fontFamily: 'Spartan_600SemiBold',
+          fontSize: '48px',
+          lineHeight: '36px',
+          color: '#2D407D',
+        }}>CAUSES</Text>
+        <View style={styles.causes_images}>
+          <Image style={{
+            width: '400px',
+            height: '388px',
+            position: 'relative',
+            top: '50px'
+          }}source={require('./assets/zhu-hongzhi-RZdPw7eIkdk-unsplash.jpg')}></Image>
+          <CausesText text="MINORITIES" left='80px' />
+          <Image style={{
+            width: '400px',
+            height: '388px',
+            position: 'relative',
+            top: '50px',
+            left: '63px'
+          }}source={require('./assets/dollar-gill-Kyoshy7BJIQ-unsplash.jpg')}></Image>
+          <CausesText text="STUDENT-OWNED" left='542px'/>
+          <Image style={{
+            width: '400px',
+            height: '388px',
+            position: 'relative',
+            top: '50px',
+            left: '126px'
+          }}source={require('./assets/jeff-siepman-kyuPjZudBKs-unsplash.jpg')}></Image>
+          <CausesText text="WOMEN-OWNED" left= '1005px'/>
+        </View>
+      </View>
     </View>
-    
   );
 }
 
@@ -63,6 +104,31 @@ const Ellipse = (props) => {
       left: props.left,
     }}
     source={require('./assets/ellipse.png')}></Image>
+  )
+}
+
+const CausesText = (props) => {
+  return (
+    <View style={{
+      position: 'absolute',
+      width: '241px',
+      height: '77px',
+      left: props.left,
+      top: '206px',
+      textAlign: 'center',
+      alignContent: 'center'
+    }}>
+      <Text style ={{
+      fontFamily: 'Spartan_600SemiBold',
+      fontSize: '18px',
+      lineHeight: '36px',
+      letterSpacing: '0.01em',
+      backgroundColor: '#fff',
+      padding: '10px'
+    }}>
+      {props.text}
+    </Text>
+  </View>  
   )
 }
 
@@ -322,6 +388,64 @@ const styles = StyleSheet.create({
   twitter_img: {
     height: '20px',
     width: '24px'
+  },
+
+  dollars_invested: {
+    position: 'absolute',
+    left: '283px',
+    top: '1600px',
+    alignContent: 'center',
+    textAlign: 'center',
+    width: '873px',
+    height: '400px'
+  },
+
+  total_dollars: {
+    // position: 'absolute',
+    fontFamily: 'Spartan_700Bold',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '18px',
+    lineHeight: '36px',
+    letterSpacing: '0.15em',
+    color: '#2b4f91',
+  },
+
+  amiri: {
+    fontFamily: 'Amiri_400Regular',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '120px',
+    lineHeight: '36px',
+    color: '#273978',
+    position: 'relative',
+    top: '90px',
+  },
+
+  spartan_bel_am: {
+    fontFamily: 'Spartan_400Regular',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '24px',
+    lineHeight: '36px',
+    letterSpacing: '0.02em',
+
+    position: 'relative',
+    top: '160px'
+  },
+
+  causes_section: {
+    position: 'absolute',
+    left: '57px',
+    top: '2050px',
+    width: '1326px',
+    height: '548px',
+    textAlign: 'center',
+    alignContent: 'center',
+  },
+  
+  causes_images: {
+    flexDirection: 'row'
   }
 
 });
