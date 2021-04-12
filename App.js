@@ -42,12 +42,28 @@ export default function App() {
       <TouchableOpacity style={styles.green_button_two}>
         Become a borrower
       </TouchableOpacity>
-      {/* <View style={styles.how_it_works}>
-        <Text>HOW FRANKLIN WORKS</Text>
-      </View> */}
+      <Text style={styles.how_it_works}>HOW FRANKLIN WORKS</Text>
+      <View style={styles.green_circles}>
+        <Ellipse left='0px'/>
+        <Ellipse left='387px'/>
+        <Ellipse left='774px'/>
+      </View>
       <StatusBar style="auto" />
     </View>
+    
   );
+}
+
+const Ellipse = (props) => {
+  return (
+    <Image style={{
+      width: '250px',
+      height: '250px',
+      position: 'absolute',
+      left: props.left,
+    }}
+    source={require('./assets/ellipse.png')}></Image>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -240,7 +256,39 @@ const styles = StyleSheet.create({
   },
 
   how_it_works: {
+    position: 'absolute',
+    width: '670px',
+    height: '36px',
+    left: '388px',
+    top: '1100px',
 
+    fontFamily: 'Spartan_600SemiBold',
+    fontStyle: 'normal',
+    fontWeight: '600',
+    fontSize: '48px',
+    // lineHeight: '36px',
+    display: 'flex',
+    alignItems: 'center',
+    textAlign: 'center',
+    letterSpacing: '0.02em',
+    color: '#2d407d'
+  },
+
+  green_circles: {
+    position: 'absolute',
+    left: '208px',
+    top: '1186px',
+    borderColor: 'red',
+    width: '1024px',
+    height: '250px',
+    alignItems: 'center',
+    textAlign: 'center',
+    flexDirection: 'row',
+  },
+
+  ellipse: {
+    width: '250px',
+    height: '250px',
   },
 
   facebook: {
