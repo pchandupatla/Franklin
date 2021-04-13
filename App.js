@@ -89,6 +89,7 @@ export default function App() {
             left: '126px'
           }}source={require('./assets/jeff-siepman-kyuPjZudBKs-unsplash.jpg')}></Image>
           <CausesText text="WOMEN-OWNED" left= '1005px'/>
+          <BrowseSquare />
         </View>
       </View>
     </View>
@@ -129,6 +130,43 @@ const CausesText = (props) => {
       {props.text}
     </Text>
   </View>  
+  )
+}
+
+const BrowseSquare = (props) => {
+  return (
+    <View style ={{
+      position:'absolute',
+      width: '232px',
+      height: '274px',
+      backgroundColor: 'grey',
+      textAlign: 'center',
+      alignContent: 'center'
+    }}>
+      <TouchableOpacity style={{
+        position: 'absolute',
+        left: '26px',
+        top: '207px',
+        width: '180px',
+        height: '48px',
+        backgroundColor: '#B1E397',
+        borderRadius: '7px',
+        textAlign:'center',
+        fontSize: '18px',
+        padding: '10px',
+      }}>
+        <Text style={{
+          position: 'relative',
+          top: '12px',
+          fontFamily: 'Spartan_700Bold',
+          fontWeight: 'bold',
+          lineHeight: '0.08em',
+          letterSpacing: '0.08em',
+          color: '#FFFFFF'
+        }}>Lend
+        </Text>
+      </TouchableOpacity>
+    </View>
   )
 }
 
