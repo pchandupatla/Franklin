@@ -40,62 +40,130 @@ export default function App() {
       <Text style={styles.middle}>$1,066</Text>
       <Text style={styles.end}>$1,600</Text>
       <Text style={styles.summary_text}>Your borrower has currently repaid $1066 of their loan. They have $534 left to go. Thanks for your generosity!</Text>
+      <Text style={styles.allocation}>YOUR ALLOCATIONS</Text>
+      <CompanyStatus name={'Sweetpop Treats'} percent ='50' pos={['177px', '1055px']} values={[753, 1510]}/>
+      <CompanyStatus name={'Maria\'s Diner'} percent ='50' pos={['177px', '1325px']} values={[557, 1510]}/>
+      {/* <CompanyStatus name={'Bob\'s Casserole'} percent ='50' pos={['177px', '1595px']} values={[500, 2000]}/> */}
+
     </View>
   );
 }
 
+const CompanyStatus = (props) => {
+  var percent = Math.round(props.values[0]/props.values[1] * 100);
+  var gradient_width = `${percent}%`;
+  var left = `${percent - 5}%`;
+
+  return (
+    <View style={{
+      position: 'absolute',
+      width: '1086px',
+      height: '221px',
+      left: props.pos[0],
+      top: props.pos[1],
+    }}>
+      <Text style={{
+        position: 'absolute',
+        width: 'auto',
+        height: '29px',
+        fontFamily: 'Amiri_400Regular',
+        fontStyle: 'normal',
+        fontWeight: 'bold',
+        fontSize: '48px',
+        lineHeight: '36px',
+        letterSpacing: '-0.015em',
+
+        color: '#212E59',
+      }}>
+        {props.name}
+      </Text>
+      <Text style={{
+        position: 'absolute',
+        width: 'auto',
+        height: '42px',
+        left: '364px',
+        top: '5px',
+
+        fontFamily: 'Spartan_400Regular',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '22px',
+        lineHeight: '36px',
+
+        letterSpacing: '0.02em',
+        color: '#212E59',
+      }}>
+        {percent}%
+      </Text>
+      <View style={{
+        position: 'absolute',
+        width: '1086px',
+        height: '60px',
+        top: '88px',
+        backgroundColor: 'blue',
+        borderRadius: '50px'
+      }}>
+        <View>
+          <LinearGradient colors={['#F3C5B9','#FAE99E']} start={[0.0, 0.0]} end={[1.0, 1.0]} style={{
+            width: gradient_width,
+            height: '60px',
+            borderRadius: '50px'
+          }}>
+          </LinearGradient>
+        </View>
+      </View>
+      <Text style={{
+        position: 'absolute',
+        width: 'auto',
+        height: '36px',
+        top: '160px',
+
+        fontFamily: 'Spartan_400Regular',
+        fontStyle: 'normal',
+        fontWeight: '600',
+        fontSize: '24px',
+        lineHeight: '36px',
+        letterSpacing: '0.02em',
+
+        color: '#212E59',
+      }}>$0</Text>
+      <Text style={{
+        position: 'absolute',
+        width: 'auto',
+        height: '36px',
+        top: '160px',
+        left: left,
+
+        fontFamily: 'Spartan_400Regular',
+        fontStyle: 'normal',
+        fontWeight: '600',
+        fontSize: '24px',
+        lineHeight: '36px',
+        letterSpacing: '0.02em',
+
+        color: '#212E59',
+      }}>${props.values[0]}</Text>
+      <Text style={{
+        position: 'absolute',
+        width: 'auto',
+        height: '36px',
+        top: '160px',
+        left: '1010px',
+
+        fontFamily: 'Spartan_400Regular',
+        fontStyle: 'normal',
+        fontWeight: '600',
+        fontSize: '24px',
+        lineHeight: '36px',
+        letterSpacing: '0.02em',
+
+        color: '#212E59',
+      }}>${props.values[1]}</Text>
+    </View>
+  )
+}
 
 const styles = StyleSheet.create({
-  super_container: {
-    overflow: 'y-scroll',
-    flex: 1,
-    backgroundColor: '#5eb1ff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  begin: {
-    position: 'absolute',
-    width: 'auto',
-    height: '36px',
-    left:'189px',
-    top: '738px',
-
-    fontFamily: 'Spartan_600SemiBold',
-    fontSize: '24px',
-    lineHeight: '36px',
-    letterSpacing: '0.02em',
-    color: '#212E59'
-  },
-
-  middle: {
-    position: 'absolute',
-    width: 'auto',
-    height: '36px',
-    left:'868px',
-    top: '738px',
-
-    fontFamily: 'Spartan_600SemiBold',
-    fontSize: '24px',
-    lineHeight: '36px',
-    letterSpacing: '0.02em',
-    color: '#212E59'
-  },
-
-  end: {
-    position: 'absolute',
-    width: 'auto',
-    height: '36px',
-    left:'1180px',
-    top: '738px',
-
-    fontFamily: 'Spartan_600SemiBold',
-    fontSize: '24px',
-    lineHeight: '36px',
-    letterSpacing: '0.02em',
-    color: '#212E59'
-  },
-
   container: {
     overflow: 'y-scroll',
     flex: 1,
@@ -298,6 +366,62 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '22px',
+    lineHeight: '36px',
+    letterSpacing: '0.02em',
+    color: '#212E59'
+  },
+  allocation: {
+    position: 'absolute',
+    width: 'auto',
+    height: '37px',
+    left: '177px',
+    top: '984px',
+
+    fontFamily: 'Spartan_400Regular',
+    fontSize: '22px',
+    lineHeight: '36px',
+    letterSpacing: '0.02em',
+
+    color: '#212E59',
+  },
+
+  begin: {
+    position: 'absolute',
+    width: 'auto',
+    height: '36px',
+    left:'189px',
+    top: '738px',
+
+    fontFamily: 'Spartan_600SemiBold',
+    fontSize: '24px',
+    lineHeight: '36px',
+    letterSpacing: '0.02em',
+    color: '#212E59'
+  },
+
+  middle: {
+    position: 'absolute',
+    width: 'auto',
+    height: '36px',
+    left:'868px',
+    top: '738px',
+
+    fontFamily: 'Spartan_600SemiBold',
+    fontSize: '24px',
+    lineHeight: '36px',
+    letterSpacing: '0.02em',
+    color: '#212E59'
+  },
+
+  end: {
+    position: 'absolute',
+    width: 'auto',
+    height: '36px',
+    left:'1180px',
+    top: '738px',
+
+    fontFamily: 'Spartan_600SemiBold',
+    fontSize: '24px',
     lineHeight: '36px',
     letterSpacing: '0.02em',
     color: '#212E59'
