@@ -43,7 +43,7 @@ export default function App() {
       <Text style={styles.allocation}>YOUR ALLOCATIONS</Text>
       <CompanyStatus name={'Sweetpop Treats'} percent ='50' pos={['177px', '1055px']} values={[753, 1510]}/>
       <CompanyStatus name={'Maria\'s Diner'} percent ='50' pos={['177px', '1325px']} values={[557, 1510]}/>
-      {/* <CompanyStatus name={'Bob\'s Casserole'} percent ='50' pos={['177px', '1595px']} values={[500, 2000]}/> */}
+      <CompanyStatus name={'Bob\'s Casserole'} percent ='50' pos={['177px', '1595px']} values={[500, 2000]}/>
 
     </View>
   );
@@ -100,7 +100,7 @@ const CompanyStatus = (props) => {
         width: '1086px',
         height: '60px',
         top: '88px',
-        backgroundColor: 'blue',
+        backgroundColor: '#BDBDBD',
         borderRadius: '50px'
       }}>
         <View>
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   container: {
     overflow: 'y-scroll',
     flex: 1,
-    backgroundColor: '#5eb1ff',
+    backgroundColor: '#FFF',
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
     left: '189px',
     width: '1086px',
     height: '192px',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#BDBDBD',
     borderRadius: '50px'
   },
 
