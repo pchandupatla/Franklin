@@ -34,7 +34,7 @@ export default function App() {
       <Text style={styles.franklin_txt}>FRANKLIN </Text>
       <View style={styles.middle_container}>
         <Text style={styles.middle_txt}>
-          YOUR LOAN, THEIR WORLD.
+          YOUR LOAN, OUR WORLD.
         </Text>
         <Text style={styles.bottom_txt}>
           Franklin can help connect small businesses to those who are willing to lend a helping hand by operating as a guarantor for crowdfunding
