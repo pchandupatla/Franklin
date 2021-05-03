@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, Button, ImagePropTypes
 import { useFonts } from 'expo-font';
 import { Spartan_400Regular, Spartan_600SemiBold, Spartan_700Bold } from '@expo-google-fonts/spartan';
 import { Amiri_400Regular } from '@expo-google-fonts/amiri'
+import { AbhayaLibre_700Bold } from '@expo-google-fonts/abhaya-libre'
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -11,7 +12,7 @@ export default function App() {
     Spartan_600SemiBold,
     Spartan_700Bold,
     Amiri_400Regular,
-
+    AbhayaLibre_700Bold,
   });
 
   return (
@@ -288,10 +289,11 @@ const styles = StyleSheet.create({
   },
 
   middle_txt: {
-    fontFamily: 'Spartan_700Bold',
+    fontFamily: 'AbhayaLibre_700Bold',
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: '70px',
+    width: '624px',
+    fontSize: '96px',
     lineHeight: '70px',
     /* or 52% */
 
