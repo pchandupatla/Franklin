@@ -19,9 +19,9 @@ export default function Browse() {
         <TouchableOpacity style={styles.causes}>CAUSES</TouchableOpacity>
         <TouchableOpacity style={styles.about}>ABOUT</TouchableOpacity>
         {/* social media icons */}
-        <TouchableOpacity style={styles.facebook}><Image style={styles.facebook_img} source ={require('./assets/facebook.png')}></Image></TouchableOpacity>
-        <TouchableOpacity style={styles.instagram}><Image style={styles.instagram_img} source ={require('./assets/insta.png')}></Image></TouchableOpacity>
-        <TouchableOpacity style={styles.twitter}><Image style={styles.twitter_img} source ={require('./assets/twitter.png')}></Image></TouchableOpacity>
+        <TouchableOpacity style={styles.facebook}><Image style={styles.facebook_img} source ={require('../../assets/facebook.png')}></Image></TouchableOpacity>
+        <TouchableOpacity style={styles.instagram}><Image style={styles.instagram_img} source ={require('../../assets/insta.png')}></Image></TouchableOpacity>
+        <TouchableOpacity style={styles.twitter}><Image style={styles.twitter_img} source ={require('../../assets/twitter.png')}></Image></TouchableOpacity>
 
         <TouchableOpacity style={styles.signin_text}>Sign in</TouchableOpacity>
         <View style={styles.signup_button}>
@@ -72,7 +72,7 @@ const BrowseRow = (props) =>
         <Image style={{
           width: '100%',
           height: '100%'
-        }}source={require('./assets/arrowbox.png')}></Image>
+        }}source={require('../../assets/arrowbox.png')}></Image>
       </TouchableOpacity>
     </View>
   )

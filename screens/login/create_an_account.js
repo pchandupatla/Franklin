@@ -24,7 +24,7 @@ export default function CreateAccount() {
         <Text style={{ color: "white", fontSize: 10, fontWeight: "300", color: "#273978", alignSelf: "center"}}>Forgot username or password?</Text>
       </View>
       <View style={styles.container_2}>
-        <Image source={require("./assets/grass.jpg")}/>
+        <Image source={require("../../assets/grass.jpg")}/>
       </View>
     </View>
   );

@@ -18,14 +18,14 @@ export default function Dashboard() {
   return (
     <View style={styles.container}>
       <View style={styles.topbar}>
-        <TouchableOpacity style={styles.logo}><Image style={styles.logo_image} source ={require('./assets/logo.png')}></Image></TouchableOpacity>
+        <TouchableOpacity style={styles.logo}><Image style={styles.logo_image} source ={require('../../assets/logo.png')}></Image></TouchableOpacity>
         <TouchableOpacity style={styles.causes}>CAUSES</TouchableOpacity>
         <TouchableOpacity style={styles.about}>ABOUT</TouchableOpacity>
         {/* social media icons */}
-        <TouchableOpacity style={styles.facebook}><Image style={styles.facebook_img} source ={require('./assets/facebook.png')}></Image></TouchableOpacity>
-        <TouchableOpacity style={styles.instagram}><Image style={styles.instagram_img} source ={require('./assets/insta.png')}></Image></TouchableOpacity>
-        <TouchableOpacity style={styles.twitter}><Image style={styles.twitter_img} source ={require('./assets/twitter.png')}></Image></TouchableOpacity>
-        <TouchableOpacity style ={styles.profile_pic}><Image style={styles.profile_img} source={require('./assets/profile.png')}></Image><Text style={styles.profile_txt}>James</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.facebook}><Image style={styles.facebook_img} source ={require('../../assets/facebook.png')}></Image></TouchableOpacity>
+        <TouchableOpacity style={styles.instagram}><Image style={styles.instagram_img} source ={require('../../assets/insta.png')}></Image></TouchableOpacity>
+        <TouchableOpacity style={styles.twitter}><Image style={styles.twitter_img} source ={require('../../assets/twitter.png')}></Image></TouchableOpacity>
+        <TouchableOpacity style ={styles.profile_pic}><Image style={styles.profile_img} source={require('../../assets/profile.png')}></Image><Text style={styles.profile_txt}>James</Text></TouchableOpacity>
       </View>
       <StatusBar style="auto" />
       <Text style={styles.dash_text}>LENDER DASHBOARD</Text>
