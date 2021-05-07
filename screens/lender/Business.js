@@ -6,7 +6,7 @@ import { Spartan_400Regular, Spartan_600SemiBold, Spartan_700Bold } from '@expo-
 import { Amiri_400Regular } from '@expo-google-fonts/amiri'
 import { AbhayaLibre_700Bold } from '@expo-google-fonts/abhaya-libre'
 
-export default function App() {
+export default function Business() {
   let [fontsLoaded] = useFonts({
     Spartan_400Regular,
     Spartan_600SemiBold,

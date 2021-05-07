@@ -6,7 +6,7 @@ import { Spartan_400Regular, Spartan_600SemiBold, Spartan_700Bold } from '@expo-
 import { Amiri_400Regular } from '@expo-google-fonts/amiri'
 import { LinearGradient } from 'expo-linear-gradient'
 
-export default function App() {
+export default function Dashboard() {
   let [fontsLoaded] = useFonts({
     Spartan_400Regular,
     Spartan_600SemiBold,

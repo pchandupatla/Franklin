@@ -5,7 +5,7 @@ import { useFonts } from 'expo-font';
 import { Spartan_400Regular, Spartan_600SemiBold, Spartan_700Bold } from '@expo-google-fonts/spartan';
 import { Amiri_400Regular } from '@expo-google-fonts/amiri'
 
-export default function App() {
+export default function Browse() {
   let [fontsLoaded] = useFonts({
     Spartan_400Regular,
     Spartan_600SemiBold,
