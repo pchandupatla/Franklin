@@ -20,7 +20,7 @@ export default class Navigation extends Component {
 
   FullNavigation = (props) => {
     return(
-      <FullStack.Navigator initialRouteName = "Home">
+      <FullStack.Navigator initialRouteName = "Browse">
         <FullStack.Screen name="Home" component={Home} />
         <FullStack.Screen name="CreateAccount" component={CreateAccount} />
         <FullStack.Screen name="Browse" component={Browse} />

@@ -1,11 +1,11 @@
 import { StatusBar, setStatusBarStyle } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Button, ImagePropTypes, ProgressViewIOSComponent } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Button, ImagePropTypes, ProgressViewIOSComponent, ImageBackground } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Spartan_400Regular, Spartan_600SemiBold, Spartan_700Bold } from '@expo-google-fonts/spartan';
 import { Amiri_400Regular } from '@expo-google-fonts/amiri'
 
-export default function Browse() {
+export default function Browse(props) {
   let [fontsLoaded] = useFonts({
     Spartan_400Regular,
     Spartan_600SemiBold,
@@ -22,20 +22,64 @@ export default function Browse() {
         <TouchableOpacity style={styles.facebook}><Image style={styles.facebook_img} source ={require('../../assets/facebook.png')}></Image></TouchableOpacity>
         <TouchableOpacity style={styles.instagram}><Image style={styles.instagram_img} source ={require('../../assets/insta.png')}></Image></TouchableOpacity>
         <TouchableOpacity style={styles.twitter}><Image style={styles.twitter_img} source ={require('../../assets/twitter.png')}></Image></TouchableOpacity>
-
-        <TouchableOpacity style={styles.signin_text}>Sign in</TouchableOpacity>
-        <View style={styles.signup_button}>
-          <TouchableOpacity style = {styles.signup_text}>Sign up</TouchableOpacity>
-        </View>
+        <TouchableOpacity style ={styles.profile_pic}><Image style={styles.profile_img} source={require('../../assets/profile.png')}></Image><Text style={styles.profile_txt}>James</Text></TouchableOpacity>
       </View>
       <Text style={styles.browse_txt}>
         If you need help finding a business that resonates with you...
       </Text>
-      <BrowseRow top='280px' text='Minority-owned Businesses'/>
-      <BrowseRow top ='651px' text='Women-owned Businesses'/>
+      <BrowseRow top='280px' text='Minority-owned Businesses' inheritence = {props}/>
+      <BrowseRow top ='651px' text='Women-owned Businesses' inheritence = {props}/>
     </View>
   );
 }
+
+const BrowseSquare = (props) => {
+  return (
+    <View style ={{
+      position:'absolute',
+      left: props.left,
+      top: props.top,
+      width: '232px',
+      height: '274px',
+      backgroundColor: 'grey',
+      textAlign: 'center',
+      alignContent: 'center'
+    }}>
+      <ImageBackground source={"../../assets/sweetpoptreats.png"} style={{
+        width: '232px',
+        height: '274px',
+        flex: 1,
+        resizeMode: 'cover',
+        justifyContent: 'center',
+      }}>
+        <TouchableOpacity style={{
+          position: 'absolute',
+          left: '26px',
+          top: '207px',
+          width: '180px',
+          height: '48px',
+          backgroundColor: '#B1E397',
+          borderRadius: '7px',
+          textAlign:'center',
+          fontSize: '18px',
+          padding: '10px',
+        }} onPress={() => props.inheritence.navigation.navigate("Business")}>
+          <Text style={{
+            position: 'relative',
+            top: '12px',
+            fontFamily: 'Spartan_700Bold',
+            fontWeight: 'bold',
+            lineHeight: '0.08em',
+            letterSpacing: '0.08em',
+            color: '#FFFFFF'
+          }}>LEND
+          </Text>
+        </TouchableOpacity>
+      </ImageBackground>
+    </View>
+  )
+}
+
 
 const BrowseRow = (props) =>
 {
@@ -58,10 +102,10 @@ const BrowseRow = (props) =>
       }}>
         {props.text}
       </Text>
-      <BrowseSquare top = '50px'/>
-      <BrowseSquare top = '50px' left='271px'/>
-      <BrowseSquare top = '50px' left = '542px'/>
-      <BrowseSquare top = '50px' left = '813px'/>
+      <BrowseSquare top = '50px' inheritence = {props.inheritence} image = "../../assets/sweetpoptreats.png"/>
+      <BrowseSquare top = '50px' left='271px' inheritence = {props.inheritence}/>
+      <BrowseSquare top = '50px' left = '542px' inheritence = {props.inheritence}/>
+      <BrowseSquare top = '50px' left = '813px' inheritence = {props.inheritence}/>
       <TouchableOpacity style={{
         position: 'absolute',
         width: '60px',
@@ -78,44 +122,6 @@ const BrowseRow = (props) =>
   )
 }
 
-const BrowseSquare = (props) => {
-  return (
-    <View style ={{
-      position:'absolute',
-      left: props.left,
-      top: props.top,
-      width: '232px',
-      height: '274px',
-      backgroundColor: 'grey',
-      textAlign: 'center',
-      alignContent: 'center'
-    }}>
-      <TouchableOpacity style={{
-        position: 'absolute',
-        left: '26px',
-        top: '207px',
-        width: '180px',
-        height: '48px',
-        backgroundColor: '#B1E397',
-        borderRadius: '7px',
-        textAlign:'center',
-        fontSize: '18px',
-        padding: '10px',
-      }}>
-        <Text style={{
-          position: 'relative',
-          top: '12px',
-          fontFamily: 'Spartan_700Bold',
-          fontWeight: 'bold',
-          lineHeight: '0.08em',
-          letterSpacing: '0.08em',
-          color: '#FFFFFF'
-        }}>LEND
-        </Text>
-      </TouchableOpacity>
-    </View>
-  )
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -124,6 +130,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  profile_txt : {
+    position: 'absolute',
+    left: '40px',
+    fontFamily: 'Spartan_700Bold',
+    fontSize: '15px',
+    lineHeight: '36px',
+    letterSpacing: '0.01em',
+    color: '#212E59',
+  },
+
+  profile_pic : {
+    position: 'absolute',
+    left: '1241px',
+    top: '57px',
+  },
+
+  profile_img: {
+    width: '30px',
+    height: '30px',
+  },  
 
   topbar: {
     position:"absolute",

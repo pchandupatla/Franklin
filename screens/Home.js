@@ -9,7 +9,7 @@ import { AbhayaLibre_700Bold } from '@expo-google-fonts/abhaya-libre'
 // import { render } from 'react-dom';
 import Navigation from "./Navigation"
 
-export default function Home() {
+export default function Home(props) {
   let [fontsLoaded] = useFonts({
     Spartan_400Regular,
     Spartan_600SemiBold,
@@ -44,7 +44,7 @@ export default function Home() {
           Franklin can help connect small businesses to those who are willing to lend a helping hand by operating as a guarantor for crowdfunding
         </Text>
       </View>
-      <TouchableOpacity style={styles.green_button_one}>
+      <TouchableOpacity style={styles.green_button_one} onPress={() => props.navigation.navigate("CreateAccount")}>
           Become a lender
       </TouchableOpacity>
       <TouchableOpacity style={styles.green_button_two}>

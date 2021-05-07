@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity, Image } from "reac
 // import grass from "./grass.png"
 //import Navigation from "../../Navigation";
 
-export default function CreateAccount() {
+export default function CreateAccount(props) {
   return (
     <View style={styles.container}>
       <View style={styles.container_1}>
@@ -19,7 +19,7 @@ export default function CreateAccount() {
           style={styles.loginButtonContainer}
           // onPress={() => this.props.navigation.navigate("Home")}
         >
-          <Text style={styles.loginButtonText}>Sign up</Text>
+          <Text style={styles.loginButtonText} onPress={() => props.navigation.navigate("Browse")}>Sign up</Text>
         </TouchableOpacity>
         <Text style={{ color: "white", fontSize: 10, fontWeight: "300", color: "#273978", alignSelf: "center"}}>Forgot username or password?</Text>
       </View>

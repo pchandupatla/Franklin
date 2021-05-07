@@ -38,12 +38,12 @@ export default function Dashboard() {
       </View>
       <Text style={styles.begin}>$0</Text>
       <Text style={styles.middle}>$1,066</Text>
-      <Text style={styles.end}>$1,600</Text>
-      <Text style={styles.summary_text}>Your borrower has currently repaid $1066 of their loan. They have $534 left to go. Thanks for your generosity!</Text>
+      <Text style={styles.end}>$1,510</Text>
+      <Text style={styles.summary_text}>Your borrower has currently repaid $1066 of their loan. They have $444 left to go. Thanks for your generosity!</Text>
       <Text style={styles.allocation}>YOUR ALLOCATIONS</Text>
-      <CompanyStatus name={'Sweetpop Treats'} percent ='50' pos={['177px', '1055px']} values={[753, 1510]}/>
-      <CompanyStatus name={'Maria\'s Diner'} percent ='50' pos={['177px', '1325px']} values={[557, 1510]}/>
-      <CompanyStatus name={'Bob\'s Casserole'} percent ='50' pos={['177px', '1595px']} values={[500, 2000]}/>
+      <CompanyStatus name={'Sweetpop Treats'} percent ='50' pos={['177px', '1055px']} values={[1000, 1510]}/>
+      {/* <CompanyStatus name={'Maria\'s Diner'} percent ='50' pos={['177px', '1325px']} values={[557, 1510]}/> */}
+      {/* <CompanyStatus name={'Bob\'s Casserole'} percent ='50' pos={['177px', '1595px']} values={[500, 2000]}/> */}
 
     </View>
   );

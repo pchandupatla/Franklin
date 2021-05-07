@@ -6,7 +6,7 @@ import { Spartan_400Regular, Spartan_600SemiBold, Spartan_700Bold } from '@expo-
 import { Amiri_400Regular } from '@expo-google-fonts/amiri'
 import { AbhayaLibre_700Bold } from '@expo-google-fonts/abhaya-libre'
 
-export default function Business() {
+export default function Business(props) {
   let [fontsLoaded] = useFonts({
     Spartan_400Regular,
     Spartan_600SemiBold,
@@ -86,7 +86,7 @@ export default function Business() {
 
         backgroundColor: '#A3De84',
         borderRadius: '5px',
-      }}>
+      }} onPress ={() => props.navigation.navigate("Dashboard")}>
         <Text style = {{
           position: 'relative',
           top: '23px',
