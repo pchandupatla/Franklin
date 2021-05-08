@@ -29,6 +29,36 @@ export default function Browse(props) {
       </Text>
       <BrowseRow top='280px' text='Minority-owned Businesses' inheritence = {props}/>
       <BrowseRow top ='651px' text='Women-owned Businesses' inheritence = {props}/>
+      <Image source={require("../../assets/sweetpoptreats.png")} style= {{
+        width: '232px',
+        height: '274px',
+        position: 'relative',
+        right: '472px',
+        top: '140px',
+      }}></Image>
+      <TouchableOpacity style={{
+        position: 'absolute',
+        left: '195px',
+        top: '543px',
+        width: '180px',
+        height: '48px',
+        backgroundColor: '#B1E397',
+        borderRadius: '7px',
+        textAlign:'center',
+        fontSize: '18px',
+        padding: '10px',
+        }} onPress={() => props.navigation.navigate("Business")}>
+          <Text style={{
+            position: 'relative',
+            top: '12px',
+            fontFamily: 'Spartan_700Bold',
+            fontWeight: 'bold',
+            lineHeight: '0.08em',
+            letterSpacing: '0.08em',
+            color: '#FFFFFF'
+          }}>LEND
+          </Text>
+      </TouchableOpacity>
     </View>
   );
 }
